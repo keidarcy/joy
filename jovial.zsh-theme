@@ -51,16 +51,17 @@ typeset -g sgr_reset="%{\e[00m%}"
 # (the syntax `typeset -A xxx` is means to declare a `associative-array` in zsh, it's like `dictionary`)
 # more `typeset` syntax see https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html
 typeset -gA JOVIAL_SYMBOL=(
-    corner.top    '╭─'
-    corner.bottom '╰─'
+    # corner.top    '╭─'
+    # corner.bottom '╰─'
 
-    git.dirty '✘✘✘'
-    git.clean '✔'
+    git.dirty ' ✘✘✘'
+    git.clean ' ✔'
 
     ## preset arrows
     # arrow '─>'
     # arrow '─▶'
-    arrow '─➤'
+    # arrow '─➤'
+    arrow ' %F{14}❯'
     arrow.git-clean '(๑˃̵ᴗ˂̵)و'
     arrow.git-dirty '(ﾉ˚Д˚)ﾉ'
 )
@@ -88,10 +89,10 @@ typeset -gA JOVIAL_PALETTE=(
     root '%B%F{203}'
 
     # current work dir path
-    path '%B%F{228}%}'
+    path '%F{004}%}'
 
     # git status info (dirty or clean / rebase / merge / cherry-pick)
-    git '%F{159}'
+    git '%F{14}'
 
     # virtual env activate prompt for python
     venv '%F{159}'
@@ -130,8 +131,8 @@ typeset -ga JOVIAL_PROMPT_ORDER=( host user path dev-env git-info )
 typeset -ga JOVIAL_PROMPT_PRIORITY=(
     path
     git-info
-    user
-    host
+    # user
+    # host
     dev-env
 )
 
